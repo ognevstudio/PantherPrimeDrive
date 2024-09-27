@@ -1,0 +1,106 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	line-height: 130%;
+}
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:focus,
+:active {
+	outline: none;
+}
+
+a:focus,
+a:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html,
+body {
+	height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+	line-height: 1;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+
+	font-family: "DM Sans", sans-serif;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button {
+	cursor: pointer;
+	font-family: "DM Sans", sans-serif;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 300;
+}
+
+.visually-hidden {
+  position: absolute; /* элемент вырывают из потока */
+  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
+  height: 1px;
+  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+  clip: rect(0 0 0 0); /* это свойство обрезает видимую область до нулевого значения */
+  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
+} 

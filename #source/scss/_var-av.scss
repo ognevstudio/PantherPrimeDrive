@@ -1,0 +1,9 @@
+@mixin var-av($var-name, $startSize, $minSize, $maxContainer, $minContainer) {
+	$addSize: $startSize - $minSize;
+	// Создаем переменную с именем, переданным в $var-name
+	#{$var-name}: $startSize + px;
+
+	@media (max-width: #{$maxContainer + px}) {
+		#{$var-name}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minContainer + px}) / #{$maxContainer - $minContainer}));
+	}
+}

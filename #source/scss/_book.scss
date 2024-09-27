@@ -1,0 +1,942 @@
+.hourly-container {
+  background-color: #FAF8F5;
+  max-width: 1216px;
+  width: 100%;
+  margin: 0 auto;
+
+  align-items: center;
+
+  padding: 20px;
+
+  margin-bottom: 40px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+
+.book {
+  max-width: 100%;
+  overflow-x: hidden;
+  @include av('padding-top', 120, 100, $maxWC, $minWC);
+  width: 100%;
+
+  h1 {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &-container {
+    max-width: 1216px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 20px;
+  }
+
+  &__item {
+    @include flexbox(row, center, nowrap);
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+    margin: 0 auto;
+    @include flexbox(column, space-between, nowrap);
+    gap: 20px;
+
+    .select {
+      color: #D2D2D2;
+    }
+
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.75em 1.5em;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  }
+}
+
+.form-group {
+  width: 100%;
+  @include flexbox(row, center, nowrap);
+  align-items: center;
+  gap: 20px;
+
+  &-item {
+    width: 100%;
+    @include flexbox(column, space-between, nowrap);
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  label {
+    color: $color-black;
+    display: block;
+    width: 100%;
+  }
+
+  input,
+  select {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 17px;
+    box-sizing: border-box;
+    border-radius: $border-radius;
+    background-color: #FAF8F5;
+  }
+
+  .custom-select {
+    width: 100%;
+  }
+
+
+}
+
+.custom-input {
+  @include flexbox(row, flex-start, nowrap);
+  gap: 20px;
+
+
+  .passengers,
+  .luggage {
+    @include flexbox(row, flex-start, nowrap);
+    gap: 7px;
+    align-items: center;
+
+    .button-block {
+      display: flex;
+      gap: 0;
+    }
+
+    button {
+      height: 40px;
+      padding: 0 14.5px;
+      font-size: 20px;
+      background-color: $button-color-main;
+      color: white;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: $border-radius;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: $button-color-hover;
+      }
+    }
+  }
+
+  input {
+    width: 50px;
+    text-align: center;
+    padding: 0;
+    cursor: default;
+  }
+}
+
+.select-button {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 17px;
+  background-color: #FAF8F5;
+  padding: 10px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $color-black;
+
+  span {
+    color: $color-black;
+  }
+
+  &:focus {
+    outline: 1px $color-secondary solid;
+  }
+}
+
+.arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #000;
+  transition: transform ease-in-out 0.3s;
+}
+
+.option {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-select.active .select-dropdown {
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.select-dropdown {
+  position: absolute;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: #FAF8F5;
+  border: none;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  transform: scaleY(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.select-dropdown li:hover {
+  background-color: $color-primary;
+
+  .option {
+    color: $color-white;
+  }
+
+  .icon {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);
+  }
+}
+
+.select-dropdown li {
+  padding: 0 20px;
+  height: 50px;
+  font-size: 16px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.select-dropdown li label {
+  width: 100%;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.select-dropdown::-webkit-scrollbar {
+  width: 7px;
+}
+
+.select-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+
+.select-dropdown::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+
+.select-dropdown input[type="radio"] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+
+
+/* interactivity */
+
+.custom-select.active .arrow {
+  transform: rotate(180deg);
+}
+
+.custom-select.active .select-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
+}
+
+.flatpickr-calendar {
+  max-width: 290px;
+  padding: 0 12px 20px 12px !important;
+  background-color: #FAF8F5;
+  border-radius: $border-radius;
+}
+
+.flatpickr-calendar:nth-of-type(2) {
+  padding: 10px;
+  height: 80px;
+}
+
+.flatpickr-months {
+
+  .numInputWrapper,
+  .flatpickr-monthDropdown-month {
+    display: none !important;
+    background-image: none !important;
+  }
+}
+
+.flatpickr-monthDropdown-months:hover {
+  background: transparent !important;
+}
+
+.flatpickr-day {
+  color: $color-black;
+  background-color: transparent;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: #45513D !important;
+    color: $color-white;
+  }
+}
+
+
+.flatpickr-disabled:hover {
+  background-color: transparent !important;
+  color: #ccc;
+}
+
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  &:hover {
+    svg {
+      fill: #45513D !important;
+    }
+  }
+}
+
+.selected {
+  background-color: #45513D !important;
+  color: $color-white;
+}
+
+.flatpickr-day.today {
+  background-color: #6C7C62 !important;
+  /* Change today's date background color */
+  color: $color-white !important;
+  /* Change today's date text color */
+}
+
+.flatpickr-hour {
+  font-size: 17px !important;
+}
+
+.flatpickr-time input:focus {
+  background: transparent !important;
+
+  input {
+    background: transparent !important;
+  }
+}
+
+.numInputWrapper input {
+  font-size: 17px !important;
+}
+
+.flatpickr-time {
+  max-height: 60px !important;
+  height: 100%;
+  border-top: none !important;
+}
+
+.flatpickr-time input:hover {
+  background: transparent !important;
+}
+
+.numInputWrapper {
+  height: 60px !important;
+}
+
+.numInputWrapper:hover {
+  background: transparent;
+}
+
+.arrowUp,
+.arrowDown {
+  padding: 0 !important;
+  border: none !important;
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+  background-color: $color-secondary !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border-radius: $border-radius;
+}
+
+.arrowUp {
+  background-image: url(../icons/up.svg) !important;
+}
+
+.arrowDown {
+  background-image: url(../icons/down.svg) !important;
+}
+
+.numInputWrapper span.arrowUp:after {
+  border: none !important;
+}
+
+.numInputWrapper span.arrowDown:after {
+  border: none !important;
+}
+
+#map {
+  margin-top: 7px;
+  width: 100%;
+  height: 500px;
+  border-radius: $border-radius;
+}
+
+
+.time-select-button {
+  width: 100%;
+  font-size: 17px;
+  background-color: #FAF8F5;
+  padding: 10px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $color-black;
+
+  span {
+    color: $color-black;
+  }
+
+  &:focus {
+    outline: 1px $color-secondary solid;
+  }
+}
+
+.time-arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #000;
+  transition: transform ease-in-out 0.3s;
+}
+
+.custom-time-select {
+  width: 100%;
+}
+
+.custom-time-select.active .time-select-dropdown {
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.time-select-dropdown {
+  width: 272px !important;
+  position: absolute;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: #FAF8F5;
+  border: none;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  transform: scaleY(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.time-select-dropdown li:hover {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.time-select-dropdown li {
+  padding: 0 20px;
+  height: 50px;
+  font-size: 16px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.time-select-dropdown li label {
+  width: 100%;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.time-select-dropdown::-webkit-scrollbar {
+  width: 7px;
+}
+
+.time-select-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+
+.time-select-dropdown::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+
+
+
+// .custom-checkbox-dropdown {
+//   position: relative;
+//   display: inline-block;
+//   width: 100%;
+// }
+
+// .checkbox-dropdown-button {
+//   width: 100%;
+//   font-size: 17px;
+//   background-color: #FAF8F5;
+//   padding: 10px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   color: #000;
+// }
+
+// .checkbox-dropdown-content {
+//   display: none;
+//   position: absolute;
+//   background-color: #FAF8F5;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+//   z-index: 1000;
+//   width: 100%;
+//   padding: 10px;
+// }
+
+// .checkbox-dropdown-content label {
+//   display: flex !important;
+//   @include flexbox(row,flex-start,nowrap);
+//   gap: 5px;
+
+// }
+
+// .custom-checkbox-dropdown.active .checkbox-dropdown-content {
+//   @include flexbox(column,flex-start,nowrap);
+//   gap: 10px;
+
+// }
+
+// .checkbox-dropdown-content label input[type="checkbox"] {
+//   display: none;
+// }
+
+// .checkbox-dropdown-content label input[type="checkbox"] + span::before {
+//   content: "";
+//   display: inline-block;
+//   width: 20px;
+//   height: 20px;
+//   border: 2px solid #ccc;
+//   border-radius: 4px;
+//   margin-right: 10px;
+//   vertical-align: middle;
+// }
+
+// .checkbox-dropdown-content label input[type="checkbox"]:checked + span::before {
+//   background-color: #45513D;
+//   border-color: #45513D;
+//   background-image: url('path_to_check_icon.svg'); /* URL to your check icon */
+//   background-size: cover;
+// }
+
+.pac-target-input:focus-visible,
+#services-input:focus-visible,
+#name:focus-visible,
+#email:focus-visible,
+#phone:focus-visible,
+#privacyPolicy:focus-visible {
+  outline: 1px $color-secondary solid;
+}
+
+.custom-checkbox-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.checkbox-dropdown-button {
+  width: 100%;
+  font-size: 17px;
+  background-color: #FAF8F5;
+  padding: 10px 11.5px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $color-black;
+}
+
+.checkbox-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FAF8F5;
+  border: none;
+  border-radius: $border-radius;
+  z-index: 50;
+  width: 100%;
+  padding: 6px 12px;
+}
+
+.custom-checkbox-dropdown.active .checkbox-dropdown-content {
+  @include flexbox(column, flex-start, nowrap);
+  gap: 6px;
+
+}
+
+.checkbox-dropdown-content label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-dropdown-content label span {
+  @include flexbox(row, flex-start, nowrap);
+  gap: 6px;
+}
+
+.checkbox-dropdown-content label input[type="checkbox"] {
+  display: none;
+  /* Hide the default checkbox */
+}
+
+.checkbox-dropdown-content label input[type="checkbox"]+span::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-primary;
+  border-radius: 5px !important;
+  vertical-align: middle;
+  background-color: transparent;
+}
+
+.checkbox-dropdown-content label input[type="checkbox"]:checked+span::before {
+  background-color: #45513D;
+  background-image: url('../icons/check.svg');
+  /* URL to your check icon */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.checkbox-dropdown-content label span {
+  vertical-align: middle;
+}
+
+
+.error-message {
+  color: red;
+  text-align: left;
+  display: none;
+  font-size: 12px;
+}
+
+.invalid {
+  border: 1px solid red !important;
+}
+
+
+.stop-input {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  position: relative;
+}
+
+#stopsContainer {
+  width: 100%;
+}
+
+/*.stop-input::after {
+  content: url('../img/icons/closingBurger.svg');
+  height: calc(100% - 10px);
+  aspect-ratio: 1;
+  background-color: $button-color-main;
+  border-radius: $border-radius;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  // Adjust based on your layout
+  transition: content 0.3s ease;
+  @include flexbox(row, center, nowrap);
+  align-items: center;
+  cursor: pointer;
+}*/
+
+.close-button {
+  @extend %button-style;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+#addStopButton {
+  width: auto;
+  @extend %button-style;
+}
+
+.button-block button:focus-visible {
+  background-color: $button-color-hover;
+}
+
+.disabled {
+  background-color: #ccc !important;
+  cursor: default;
+  pointer-events: none;
+}
+
+
+.privacy-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  label {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  a {
+    font-weight: 600;
+    color: $button-color-main;
+
+    &:hover {
+      color: $button-color-hover;
+    }
+
+    &:active {
+      color: $button-color-clicked;
+    }
+  }
+}
+
+
+
+
+
+
+.book__passengers-additional-services {
+  justify-content: space-between;
+
+  .form-group-item {
+    height: 100%;
+  }
+}
+
+
+
+.form-user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-user-info-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100%;
+}
+
+.form-user-info-label {
+  height: min-content;
+}
+
+.book__info-container {
+  width: 100%;
+  height: 100%;
+}
+
+.book__order-info {
+  padding: 20px;
+  height: 100%;
+
+}
+
+.book__main-block {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.book__car-image {
+  width: 280px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: $border-radius;
+}
+
+.book__main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.book__car-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.book__main-info-content {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.book__date-time-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.book__additional-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.book__additional-info-content {
+  display: flex;
+  gap: 8px;
+}
+
+.book__address-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.book__address-container-stops {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.book__address-container-stops p:last-child {
+  margin-bottom: 10px;
+}
+
+.book__services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.services-list-item {
+  display: flex;
+  gap: 4px;
+}
+
+.book__passenger-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.book__order-info {
+  background-color: $button-color-light-main;
+  border-radius: $border-radius;
+  width: 100%;
+}
+
+.book__price-container {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.book__price-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: $button-color-light-main;
+  padding: 20px;
+  border-radius: $border-radius;
+}
+
+.book__subtotal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book__label {
+  color: #A0A0A0;
+}
+
+.book__tax {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book__price-divider {
+  width: 100%;
+  border-bottom: solid 1px #D2D2D2;
+
+  display: none;
+}
+
+.book__total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book__total-number {
+  text-align: end;
+}
+
+.book__label-large {
+  font-size: 20px;
+}
+
+.book_price-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  gap: 20px;
+}
+
+.book__button {
+  @extend %button-style;
+  padding: 10px 20px;
+  width: fit-content;
+}
+
+.details-open-button {
+  justify-content: center;
+}

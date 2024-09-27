@@ -1,0 +1,125 @@
+// Font styles
+$font-weight-bold: 700;
+
+// Border radius
+$border-radius: 10px;
+
+// Text colors
+$text-color-primary: #252525;
+$text-color-light: #EDE9E3;
+
+
+// Screen sizing
+$mobile: 360px;
+$mobileL: 480px;
+$tablet: 768px;
+$laptop: 960px;
+$desktop: 1256px;
+
+$maxWC: 1256;
+$minWC: 360;
+
+
+// Titles sizing
+.h1 {
+    @include av('font-size', 80, 36, $maxWC, $minWC);
+
+    @media (max-width: $tablet) {
+        text-align: left;
+    }
+
+    line-height: 120%;
+}
+
+.h2 {
+    text-align: center;
+    @include av('font-size', 48, 32, $maxWC, $minWC);
+    @include av('margin-bottom', 30, 20, $maxWC, $minWC);
+
+    @media (max-width: $tablet) {
+        text-align: left;
+    }
+
+    line-height: 120%;
+}
+
+.h3 {
+    @include av('font-size', 40, 24, $maxWC, $minWC);
+    line-height: 130%;
+}
+
+.h4 {
+    @include av('font-size', 24, 20, $maxWC, $minWC);
+    line-height: 130%;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+}
+
+.small-text {
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+}
+
+// Button colors
+$button-color-main: #45513D;
+$button-color-hover: #6C7C62;
+$button-color-clicked: #252525;
+$button-color-invalid: #D2D2D2;
+
+$button-color-light-main: #FAF8F5;
+$button-color-light-hover: #FFFFFF;
+$button-color-light-clicked: #EDE9E3;
+
+// Display Flex Mixin
+// Usage: @include flexbox(direction, justify-content, flex-wrap);
+@mixin flexbox($direction: row, $justify-content: space-between, $flex-wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    flex-wrap: $flex-wrap;
+}
+
+// Button Style Template
+// Usage: @extend %button-style;
+%button-style {
+    transition: 0.2s;
+    background-color: $button-color-main;
+    border-radius: $border-radius;
+    color: white;
+    align-content: center;
+    text-align: center;
+    width: fit-content;
+    height: 40px;
+    padding: 10px 30px;
+    white-space: nowrap;
+
+    @media (max-width: $mobile) {
+        padding: 0 24px;
+        width: 100%;
+    }
+
+    &:hover {
+        background-color: $button-color-hover;
+    }
+
+    &:active {
+        background-color: $button-color-clicked;
+    }
+
+    &:focus-visible {
+        background-color: $button-color-hover;
+    }
+}
+
+//Suggested
+// Color Palette
+$color-primary: #45513D;
+$color-secondary: #6C7C62;
+$color-beige: #EDE9E3;
+$color-white: #FFFFFF;
+$color-black: #252525;

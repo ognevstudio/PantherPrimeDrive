@@ -1,0 +1,74 @@
+//System Files
+
+@use 'sass:math';
+
+@import './_nullstyle';
+@import './_av';
+@import './_var-av';
+@import './_vars.scss';
+
+
+//Style Files
+
+@import "./header.scss";
+@import "./home.scss";
+@import "./cars.scss";
+@import "./drivers.scss";
+@import "./service.scss";
+@import "./reviews.scss";
+@import "./about.scss";
+@import "./faq.scss";
+@import "./footer.scss";
+@import "./book.scss";
+
+body {
+    transition: 0.2s;
+}
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    max-width: 100vw;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+section {
+    padding: 0px 20px 0px 20px;
+    @include av('padding-top', 100, 60, $maxWC, $minWC);
+    @include av('padding-bottom', 100, 60, $maxWC, $minWC);
+
+    @media (max-width: 600px) {
+        padding: 0px 20px 0px 20px;
+        @include av('padding-top', 100, 60, $maxWC, $minWC);
+        @include av('padding-bottom', 100, 60, $maxWC, $minWC);
+    }
+}
+
+.navigation {
+    margin-top: 30px;
+    @include flexbox(row, center, nowrap);
+    gap: 20px;
+    width: 100%;
+
+    button {
+        background-color: $button-color-main;
+        width: 40px;
+        height: 40px;
+        border-radius: $border-radius;
+        @include flexbox(row, center, nowrap);
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $button-color-hover;
+        }
+    }
+}
+
+
+@import "./responsive.scss";

@@ -1,0 +1,92 @@
+.footer {
+    width: 100%;
+    padding: 100px 20px;
+    background-color: $color-black;
+    color: $color-beige;
+
+    &-container {
+        max-width: 1216px;
+        margin: 0 auto;
+        @include flexbox(column, center, nowrap);
+        align-items: center;
+        gap: 70px;
+    }
+
+    &__inner {
+        width: 100%;
+        @include flexbox(row, space-between, nowrap);
+        align-items: flex-start;
+    }
+
+    &__logo {
+        width: 131px;
+        height: 40px;
+    }
+
+    &-item {
+        @include flexbox(row, space-between, nowrap);
+        gap: 150px;
+    }
+
+    &__menu {
+        ul {
+            @include flexbox(row, flex-start, wrap);
+            align-items: center;
+            gap: 10px;
+        }
+
+        a {
+            color: $color-beige;
+
+            &:hover {
+                color: lighten($color-beige, 20%);
+            }
+        }
+    }
+
+    &__contact {
+        @include flexbox(column, center, nowrap);
+        align-items: flex-start;
+        gap: 12px;
+
+        a {
+            color: $color-beige;
+
+            &:hover {
+                color: lighten($color-beige, 20%);
+            }
+        }
+    }
+
+    &__socials {
+        @include flexbox(row, center, nowrap);
+        align-items: center;
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .copyright {
+        color: $color-beige;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.phone-container_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    text-align: start;
+
+    span {
+        opacity: 40%;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}

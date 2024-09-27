@@ -1,0 +1,92 @@
+.faq {
+    width: 100%;
+    background-color: $color-beige;
+
+    &__title-container span {
+        color: $color-primary;
+    }
+}
+
+.accordion-container {
+    max-width: 1216px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.accordion__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.accordion-item {
+    width: 100%;
+    background-color: #FAF8F5;
+    border-radius: $border-radius;
+    overflow: hidden;
+    /* Ensures that expanding content does not overflow */
+}
+
+.accordion__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* Ensure ::after is positioned relative to the button */
+    padding: 20px;
+    font-size: 20px;
+    text-align: left;
+    background-color: #FAF8F5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &::after {
+        content: url('../img/icons/plus.svg');
+        width: 40px;
+        height: 40px;
+        background-color: $color-secondary;
+        border-radius: $border-radius;
+        position: absolute;
+        right: 20px;
+        /* Adjust based on your layout */
+        transition: content 0.3s ease;
+        @include flexbox(row, center, nowrap);
+        align-items: center;
+    }
+
+    &.active::after {
+        content: url('../img/icons/closingBurger.svg');
+        background-color: $button-color-main;
+    }
+
+    br:first-of-type {
+        display: none;
+    }
+}
+
+.accordion__button-text {
+    flex: 0.85;
+    white-space: normal;
+    /* Allow text to wrap */
+}
+
+.accordion__text {
+    background-color: #FAF8F5;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    /* Only padding for left and right initially */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.open {
+    padding: 0 20px 20px 20px;
+    /* Apply full padding when open */
+}

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Panther Prime Drive – Safe and Luxury Black Car Service in Colorado</title>
+
+		<meta name="description" content="Get instant pricing and book your premium ride today. Experience safe, reliable, and luxury black car services across Colorado, available 24/7." />
+		<meta name="keywords" content="luxury car service Colorado, airport transfer, chauffeur service, hourly car rental, Aspen Vail car service" />
+
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content="Panther Prime Drive – Luxury Car Services in Colorado" />
+		<meta property="og:description" content="Get instant pricing and book your premium ride today. Experience safe, reliable, and luxury black car services across Colorado, available 24/7." />
+		<meta property="og:image" content="https://www.pantherprimedrive.com/img/social-share.jpg" />
+		<meta property="og:url" content="https://www.pantherprimedrive.com" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter Card Meta Tags -->
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Panther Prime Drive – Luxury Car Services in Colorado" />
+		<meta name="twitter:description" content="Get instant pricing and book your premium ride today. Experience safe, reliable, and luxury black car services across Colorado, available 24/7." />
+		<meta name="twitter:image" content="https://www.pantherprimedrive.com/img/social-share.jpg" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="./img/logo.ico" />
+
+		<!-- Preconnect and Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+
+		<!-- CSS Files -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+			{
+			    "@context": "https://schema.org",
+			    "@type": "Service",
+			    "serviceType": [
+			    "Airport Transfer To",
+			    "Airport Transfer From",
+			    "Hourly Driver and Car Rental",
+			    "Trips to Aspen, Vail, Breckenridge, and Other Tourist Spots in Colorado",
+			    "Corporate Transportation",
+			    "Luxury Chauffeur Services",
+			    "Long-Distance Rides",
+			    "Event Transportation"
+			    ],
+			    "provider": {
+			    "@type": "Organization",
+			    "name": "Panther Prime Drive",
+			    "url": "https://www.pantherprimedrive.com",
+			    "telephone": "+1-720-579-1938",
+			    "email": "info@pantherprimedrive.com",
+			    "areaServed": [
+			        {"@type": "Place", "name": "Denver"},
+			        {"@type": "Place", "name": "Colorado Springs"},
+			        {"@type": "Place", "name": "Aspen"},
+			        {"@type": "Place", "name": "Vail"},
+			        {"@type": "Place", "name": "Boulder"},
+			        {"@type": "Place", "name": "Fort Collins"},
+			        {"@type": "Place", "name": "Breckenridge"},
+			        {"@type": "Place", "name": "Pueblo"},
+			        {"@type": "Place", "name": "Steamboat Springs"},
+			        {"@type": "Place", "name": "Durango"},
+			        {"@type": "Place", "name": "Grand Junction"}
+			    ],
+			    "contactPoint": {
+			        "@type": "ContactPoint",
+			        "telephone": "+1-720-579-1938",
+			        "contactType": "Customer Service",
+			        "availableLanguage": ["English", "Russian", "Tajik"]
+			    }
+			    },
+			    "offers": {
+			    "@type": "Offer",
+			    "priceCurrency": "USD",
+			    "eligibleRegion": {"@type": "Place", "name": "Colorado"},
+			    "url": "https://www.pantherprimedrive.com/pricing-calculator"
+			    },
+			    "openingHours": "24/7"
+			}
+		</script>
+	</head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFG4CJ9Q1P"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-ZFG4CJ9Q1P');
+	</script>
+	<body>
+		<header class="header">
+			<div class="header__row">
+				<a href="./index.html" class="header__logo">
+					<img loading="lazy" class="logo-vector" src="./img/icons/logo-small.svg" alt="Panther Premium Drive Company Logo" />
+					<img loading="lazy" class="logo-text" src="./img/icons/logo-text.svg" alt="Panther Premium Drive Company Logo" />
+				</a>
+				<div class="header__contact">
+					<div class="phone-container">
+						<a class="header__contact-link text phone__text" href="tel:+17207803033">+1 (720) 780 30 33</a>
+						<span class="small-text">6am - 11pm Every Day</span>
+					</div>
+					<a class="header__mobile-icon phone__href" href="tel:+17205791938">
+						<img loading="lazy" src="./img/icons/phone.svg" alt="Phone Icon" />
+					</a>
+				</div>
+				<div class="header__buttons">
+					<div class="book__buttons">
+						<a href="tel:+17205791938" id="bookButton" class="book__button header__book__button phone__href text">Call Now</a>
+					</div>
+					<div class="header__mobile-menu">
+						<div id="menuIcon" class="header__burger" onclick="toggleMenu()"></div>
+						<div class="header__mobile-menu-overlay" id="menuBackground"></div>
+						<nav class="header__mobile-nav" id="menuContent">
+							<ul class="header__mobile-nav-list">
+								<li onclick="toggleMenu()" class="header__mobile-nav-item text"><a href="#cars">Cars</a></li>
+								<li onclick="toggleMenu()" class="header__mobile-nav-item text"><a href="#services">Services</a></li>
+								<li onclick="toggleMenu()" class="header__mobile-nav-item text"><a href="#reviews">Reviews</a></li>
+								<li onclick="toggleMenu()" class="header__mobile-nav-item text"><a href="#about-us">About Us</a></li>
+								<li onclick="toggleMenu()" class="header__mobile-nav-item text"><a href="#FAQ">FAQ</a></li>
+								<a href="tel:+17207803033" class="header__mobile-contact call__btn text phone__href">Call us</a>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="main">
+			<section class="book">
+				<h1 class="home__title h1" id="page-headline">Booking car trips</h1>
+				<div class="service__item hourly-container">
+					<span class="service__item-contact text">Need an hourly rental? Contact us, and let’s discuss the details!</span>
+					<a href="tel:" class="service__item-contact-btn text phone__href">Call Now</a>
+				</div>
+				<div class="book-container" style="  overflow: hidden;">
+					<div class="book__item">
+						<form class="form" id="bookingForm" novalidate action="https://submit-form.com/TdpgQmQYt" onkeydown="if(event.keyCode === 13) {return false;}">
+							<!-- onkeydown to prevent form submitting by pressing Enter-->
+							<!-- Choose a car -->
+							<div class="form-group">
+								<div class="form-group-item">
+									<label for="select-button">Choose a Car</label>
+									<div id="custom-select" class="custom-select">
+										<button type="button" id="select-button" class="select-button" role="combobox" aria-labelledby="select button" aria-haspopup="listbox" aria-expanded="false" aria-controls="select-dropdown">
+											<span class="selected-value" id="selected-car"> <span class="select">Select</span></span>
+										</button>
+										<ul class="select-dropdown" role="listbox" id="select-dropdown">
+											<li role="option">
+												<label value="2023 Chevrolet Tahoe" class="option">
+													<span class="car-name">2023 Chevrolet Tahoe</span> <img loading="lazy" src="img/icons/user.svg" class="icon" /> <span class="car-passengers">Up to 7</span>
+													<img loading="lazy" src="img/icons/backpack.svg" class="icon" /><span class="car-luggage">Up to 3</span>
+												</label>
+											</li>
+											<li role="option">
+												<label value="2024 Infiniti QX60" class="option">
+													<span class="car-name">2024 Infiniti QX60</span> <img loading="lazy" src="img/icons/user.svg" class="icon" /> <span class="car-passengers">Up to 3</span>
+													<img loading="lazy" src="img/icons/backpack.svg" class="icon" /><span class="car-luggage">Up to 6</span>
+												</label>
+											</li>
+											<li role="option">
+												<label value="2024 Chevrolet Suburban" class="option">
+													<span class="car-name">2024 Chevrolet Suburban</span> <img loading="lazy" src="img/icons/user.svg" class="icon" /> <span class="car-passengers">Up to 7</span>
+													<img loading="lazy" src="img/icons/backpack.svg" class="icon" /><span class="car-luggage">Up to 6</span>
+												</label>
+											</li>
+											<li role="option">
+												<label value="2023 Tesla Model 3" class="option">
+													<span class="car-name">2023 Tesla Model 3</span> <img loading="lazy" src="img/icons/user.svg" class="icon" /> <span class="car-passengers">Up to 3</span>
+													<img loading="lazy" src="img/icons/backpack.svg" class="icon" /><span class="car-luggage">Up to 3</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+
+									<!-- Hidden input field to store selected value -->
+									<input type="hidden" id="selectedCar" name="selectedCar" required />
+									<input type="hidden" id="priceInput" name="price" />
+
+									<!-- Hidden input field for notification email -->
+									<input type="hidden" name="_email.subject" value="New booking form submission" />
+									<span class="error-car error-message" id="car-error">Please choose a car.</span>
+								</div>
+							</div>
+
+							<!-- Date and Time  -->
+							<div class="form-group">
+								<div class="form-group-item">
+									<label for="date">Date</label>
+									<input type="text" id="date" name="date" placeholder="DD/MM/YYYY" required />
+									<span class="error-message" id="date-error">Please select a date.</span>
+								</div>
+								<div class="form-group-item">
+									<label for="time-select-button">Time</label>
+									<div id="custom-time-select" class="custom-time-select">
+										<button
+											type="button"
+											id="time-select-button"
+											class="select-button"
+											role="combobox"
+											aria-labelledby="time-select-button"
+											aria-haspopup="listbox"
+											aria-expanded="false"
+											aria-controls="time-select-dropdown"
+										>
+											<span class="selected-time-value">Select a time</span>
+										</button>
+										<ul class="time-select-dropdown" role="listbox" id="time-select-dropdown">
+											<!-- Time options will be dynamically generated -->
+										</ul>
+										<input type="hidden" id="selectedTime" name="selectedTime" required />
+									</div>
+									<span class="error-message" id="time-error">Please select a time.</span>
+								</div>
+							</div>
+
+							<!-- The Departure -->
+							<div class="form-group">
+								<div class="form-group-item">
+									<label for="departure">Departure Address</label>
+									<input type="text" id="departure" name="departure" placeholder="Enter your departure address" required />
+									<span class="error-message" id="departure-error">Please enter a valid departure address.</span>
+								</div>
+							</div>
+
+							<!-- The Arrival -->
+							<div class="form-group">
+								<div class="form-group-item">
+									<div id="stopsContainer">
+										<!-- Existing stop inputs will be dynamically added here -->
+
+										<button type="button" id="addStopButton">Add a stop</button>
+									</div>
+
+									<label for="arrival">Arrival Address:</label>
+									<input type="text" id="arrival" name="arrival" placeholder="Arrival Address" required />
+									<span class="error-message" id="arrival-error">Please enter a valid arrival address.</span>
+								</div>
+							</div>
+
+							<!-- Passengers and luggage & Additional Services -->
+							<div class="form-group book__passengers-additional-services">
+								<div class="form-group-item">
+									<label for="">Passengers and luggage</label>
+									<div class="custom-input">
+										<div class="passengers">
+											<label for="passengers"><img loading="lazy" src="img/icons/user.svg" /></label>
+											<div class="button-block">
+												<button type="button" id="decreasePassengers" class="disabled">-</button>
+												<input type="number" id="passengers" name="passengers" value="1" min="1" required readonly />
+												<button type="button" id="increasePassengers">+</button>
+											</div>
+										</div>
+
+										<div class="luggage">
+											<label for="luggage"><img loading="lazy" src="img/icons/backpack.svg" /></label>
+											<div class="button-block">
+												<button type="button" id="decreaseLuggage" class="disabled">-</button>
+												<input type="number" id="luggage" name="luggage" value="0" min="0" required readonly />
+												<button type="button" id="increaseLuggage">+</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!--Additional Services-->
+
+								<div class="form-group-item">
+									<label for="additionalServices">Additional services</label>
+									<!--   <div id="custom-checkbox-dropdown" class="custom-checkbox-dropdown">
+                                        <button type="button" id="checkbox-dropdown-button" class="checkbox-dropdown-button">
+                                            <span class="selected-services">Select</span>
+                                        </button>
+                                        <div class="checkbox-dropdown-content">
+                                            <label>
+                                                <input type="checkbox" name="additionalServices" value="8">
+                                                <span>Child Seat</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" name="additionalServices" value="9">
+                                                <span>Child Seat</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" name="additionalServices" value="10">
+                                                <span>Child Seat</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" name="additionalServices" value="11">
+                                                <span>Child Seat</span>
+                                            </label>
+                                        </div> 
+                                    </div>-->
+									<input type="text" id="services-input" name="services" placeholder="Child seat, etc." />
+								</div>
+							</div>
+
+							<!--User Information-->
+							<div class="form-group form-user-info">
+								<div class="form-group-item form-user-info-item">
+									<label for="name" class="form-user-info-label">Name</label>
+									<input type="text" id="name" name="name" placeholder="Name" required maxlength="50" />
+									<span class="error-message" id="name-error">Please enter a valid name. Name should only contain letters and spaces, maximum 50 characters.</span>
+								</div>
+								<div class="form-group-item form-user-info-item">
+									<label for="email" class="form-user-info-label">E-mail</label>
+									<input type="email" id="email" name="email" placeholder="example@example.com" required title="Please enter a valid email address." />
+									<span class="error-message" id="email-error">Please enter a valid email address.</span>
+								</div>
+
+								<div class="form-group-item form-user-info-item">
+									<label for="phone" class="form-user-info-label">Phone number</label>
+									<input type="tel" id="phone" name="phone" placeholder="7290002838" required pattern="^[0-9]{10}$" title="Please enter a valid 10-digit phone number. Only numbers are allowed." />
+									<span class="error-message" id="phone-error">Please enter a valid 10-digit phone number. Only numbers are allowed.</span>
+								</div>
+							</div>
+
+							<!--Checkbox for privacy policy-->
+							<div class="privacy-group">
+								<label>
+									<input type="checkbox" id="privacyPolicy" required />
+									<span>I agree with terms of <a href="./#source/privacy policy.pdf" target="_blank">Privacy Policy</a></span>
+								</label>
+								<span id="privacy-policy-error" class="error-message"> This field is required</span>
+							</div>
+						</form>
+
+						<!-- Order info block-->
+						<div class="book__item book__info-container visually-hidden" id="details-block">
+							<div class="book__order-info">
+								<div class="book__main-block">
+									<img loading="lazy" src=".img/cars/" alt="a" class="book__car-image" id="car-info-image" />
+									<div class="book__main-info">
+										<div class="book__car-info">
+											<p class="book__car-name" id="car-info">2019 MERCEDES E300</p>
+											<div class="book__main-info-content">
+												<img loading="lazy" src="./img/icons/user.svg" alt="passenger icon" class="book__passengers-icon" />
+												<p class="book__passengers-number" id="passengers-info">4</p>
+											</div>
+											<div class="book__main-info-content">
+												<img loading="lazy" src="./img/icons/backpack.svg" alt="luggage icon" class="book__luggage-icon" />
+												<p class="book__luggage-number" id="luggage-info">3</p>
+											</div>
+										</div>
+
+										<div class="book__date-time-info">
+											<div class="book__main-info-content">
+												<img loading="lazy" src="./img/icons/calendar.svg" alt="calendar icon" class="book__date-icon" />
+												<p class="book__date-number" id="date-info">06/06/2024</p>
+											</div>
+											<div class="book__main-info-content">
+												<img loading="lazy" src="./img/icons/clock.svg" alt="clock icon" class="book__time-icon" />
+												<p class="book__time-number" id="time-info">8:10 PM</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="book__additional-info">
+									<div class="book__additional-info-content">
+										<p class="book__label">From:</p>
+										<div class="book__address-container">
+											<p id="departure-info">Departure</p>
+										</div>
+									</div>
+									<div class="book__additional-info-content">
+										<p class="book__label">To:</p>
+										<div class="book__address-container">
+											<div class="book__address-container-stops" id="arrival-container"></div>
+											<p id="arrival-info">Arrival</p>
+										</div>
+									</div>
+									<div class="book__additional-info-content">
+										<p class="book__label">Additional services:</p>
+										<!--<div class="book__services-list">
+                                            <div class="services-list-item">
+                                                <img  loading="lazy" src="/img/icons/checkbox.svg" alt="checkbox icon" class="book__check-icon">
+                                            <p class="book__services-name">child seat</p>
+                                            </div>
+                                            <div class="services-list-item">
+                                                <img  loading="lazy" src="/img/icons/checkbox.svg" alt="checkbox icon" class="book__check-icon">
+                                            <p class="book__services-name">child seat</p>
+                                            </div>
+                                        </div>-->
+										<p class="book__additional-info-content-services" id="services-info"></p>
+									</div>
+
+									<div class="book__passenger-info">
+										<div class="book__additional-info-content">
+											<p class="book__label">Name:</p>
+											<p class="book__passenger-name" id="name-info">John Doe</p>
+										</div>
+										<div class="book__additional-info-content">
+											<p class="book__label">E-mail:</p>
+											<p class="book__passenger-email" id="email-info">johndoe1234@gmail.com</p>
+										</div>
+										<div class="book__additional-info-content">
+											<p class="book__label">Phone number:</p>
+											<p class="book__passenger-phone" id="phone-info">+1 (000) 000-0000</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Map -->
+					<div class="book__item">
+						<div id="map"></div>
+					</div>
+
+					<!-- Order info button -->
+					<div class="book__buttons details-open-button" id="details-open-button-container">
+						<button class="book__button disabled text" id="details-open-button-main">Find out the cost</button>
+						<button class="book__button book__button-arrow disabled" id="details-open-button-arrow">
+							<img loading="lazy" src="img/icons/arrow.svg" alt="Arrow Icon" />
+						</button>
+					</div>
+
+					<!-- Price block -->
+					<div class="book__item book__price-container visually-hidden" id="price-block">
+						<div class="book__price-info">
+							<div class="book__subtotal">
+								<p class="book__label">Subtotal</p>
+								<p class="book__subtotal-number" id="price-subtotal">$730</p>
+							</div>
+							<div class="book__tax">
+								<p class="book__label">Tax</p>
+								<p class="book__tax-number" id="price-tax">$20</p>
+							</div>
+							<div class="book__price-divider"></div>
+							<div class="book__total">
+								<p class="book__label book__label-large">Total</p>
+								<div class="book__total-number-block">
+									<p class="book__total-number" id="price-total">$750</p>
+									<p class="book__label small-text">tips and tax included</p>
+								</div>
+							</div>
+						</div>
+						<div class="book_price-buttons">
+							<button id="details-close-button" class="book__button header__book__button text">Go back</button>
+							<div class="book__buttons" id="submit-button-container">
+								<button type="submit" form="bookingForm" class="book__button header__book__button text" id="submit-button-main">Order</button>
+								<button type="submit" form="bookingForm" class="book__button book__button-arrow header__button-arrow" id="submit-button-arrow">
+									<img loading="lazy" src="img/icons/arrow.svg" alt="Arrow Icon" />
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer-container">
+				<div class="footer__inner">
+					<div class="footer__logo">
+						<a href="./index.html#home"><img loading="lazy" src="././img/icons/logoLight.svg" alt="Panther Prime Drive Logo" /></a>
+					</div>
+					<div class="footer-item">
+						<div class="footer__menu">
+							<ul>
+								<li class="footer__menu-item"><a href="./index.html#cars">Cars</a></li>
+								<li class="footer__menu-item"><a href="./index.html#services">Services</a></li>
+								<li class="footer__menu-item"><a href="./index.html#reviews">Reviews</a></li>
+								<li class="footer__menu-item"><a href="./index.html#about-us">About Us</a></li>
+								<li class="footer__menu-item"><a href="./index.html#FAQ">FAQ</a></li>
+							</ul>
+						</div>
+						<div class="footer__contact">
+							<a href="mailto:info@pantherprimedrive.com" target="_blank">info@pantherprimedrive.com</a>
+							<div class="phone-container_footer">
+								<a class="header__contact-link text phone__text" href="tel:+17207803033">+1 (720) 780 30 33</a>
+								<span class="small-text">6am - 11pm Every Day</span>
+							</div>
+						</div>
+					</div>
+					<div class="footer__socials">
+						<a href="https://www.instagram.com/panther.primedrive/?utm_source=ig_web_button_share_sheet" target="_blank"><img loading="lazy" src="./img/icons/instagram.svg" alt="Instagram Logo" /></a>
+						<a href="https://www.facebook.com/profile.php?id=61561479333856" target="_blank"><img loading="lazy" src="./img/icons/facebook.svg" alt="Facebook Logo" /></a>
+					</div>
+				</div>
+				<div class="copyright">
+					<span>Copyright 2023-2024. Kholov Transportation LLC. All Right Reserved</span>
+				</div>
+			</div>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsYLOHcHtcrEUo-woRMjLsy4OMHzXj6ys&libraries=places&callback=initMap&v=beta"></script>
+		<!--jQuery library -->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+		<script src="./js/book.js"></script>
+	</body>
+</html>

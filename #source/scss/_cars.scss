@@ -1,0 +1,353 @@
+.cars {
+    width: 100%;
+    height: 100%;
+    background-color: $color-beige;
+    position: relative;
+
+    .subtitle {
+        max-width: 1216px;
+        width: 100%;
+        @include av('font-size', 20, 18, $maxWC, $minWC);
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: $color-secondary;
+        border-radius: $border-radius;
+        color: white;
+    }
+
+    &-swiper {
+        max-width: 1216px;
+        margin: 0 auto;
+        overflow: visible;
+    }
+
+    &__container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+    }
+
+    &__content {
+        height: 100%;
+        @include flexbox (column, space-between, nowrap);
+        @include av('gap', 20, 10, $maxWC, $minWC);
+        position: relative;
+
+        &-title {
+            @include flexbox (column, flex-start, nowrap);
+            gap: 10px;
+
+            &-info {
+                @include flexbox (column, flex-start, nowrap);
+                gap: 10px;
+            }
+        }
+
+        &-item {
+            height: 100%;
+            @include flexbox (row, space-between, nowrap);
+        }
+
+        &-info {
+            @include flexbox (column, flex-start, nowrap);
+            gap: 10px;
+
+            &-item {
+                @include flexbox (row, flex-start, nowrap);
+                gap: 8px;
+            }
+        }
+
+        &-description {
+            width: 100%;
+            display: block;
+            flex: 1;
+        }
+
+        &-pricing {
+            width: 100%;
+            font-size: 20px;
+            @include flexbox(row, flex-start, nowrap);
+            gap: 12px;
+
+            &-item {
+                height: 26px;
+                @include flexbox(row, flex-start, nowrap);
+                align-items: center;
+                gap: 8px;
+            }
+        }
+    }
+
+    &__book__button {
+        @extend %button-style;
+        width: 132px;
+        position: relative;
+        bottom: 0
+    }
+
+    &__item-slider {
+        @include flexbox(column, flex-start, nowrap);
+        gap: 10px;
+    }
+
+    &__item-swiper {
+        width: 100%;
+
+        img,
+        video {
+            object-fit: cover;
+            border-radius: $border-radius;
+        }
+    }
+
+    .thumb-slider {
+        width: 100%;
+        @include flexbox(row, flex-start, nowrap);
+    }
+
+    .thumb-slide {
+        gap: 10px;
+    }
+
+    .swiper-slide {
+        margin: 0;
+
+        img,
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin: 0;
+        }
+    }
+
+    .cars__item-2 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .cars__item-3 {
+        grid-column: 4 / -1;
+    }
+
+    &__item {
+        width: 100%;
+        @include av('padding', 20, 10, 1920, 768);
+        border-radius: $border-radius;
+        background-color: $color-white;
+        @include flexbox(row, start, nowrap);
+        @include av('gap', 20, 10, 1920, 768);
+
+        &-1 {
+            grid-column-start: 1;
+            grid-column-end: -1;
+
+            .cars__item-slider {
+                max-width: 578px;
+            }
+
+            .cars__content {
+                &-description {
+                    max-width: 412px;
+                    height: 100%;
+                }
+            }
+
+            .cars__item-swiper {
+                height: 280px;
+            }
+
+            .thumb-slide-item {
+                max-width: 107.6px;
+                height: 100px;
+
+                img,
+                video {
+                    width: 100%;
+                    border-radius: $border-radius;
+                    object-fit: cover;
+                }
+            }
+
+            .cars__book__button {
+                width: 100%;
+
+            }
+
+            @media (max-width: 1000px) {
+                .cars__item-slider {
+                    max-width: 400px;
+                }
+            }
+        }
+
+        &-2,
+        &-3 {
+            flex-direction: column;
+
+            .cars__item-slider {
+                width: 100%;
+                @include av('height', 390px, 280px, 1920, $desktop);
+
+            }
+
+            .cars__item-swiper {
+                height: 280px;
+            }
+
+            .cars__item-text {
+                width: 100%;
+            }
+
+            .cars__content {
+                &-pricing {
+                    width: 100%;
+                    justify-content: flex-start;
+                    gap: 20px;
+                }
+
+                &-item {
+                    @media (max-width: $desktop) {
+                        flex-direction: column;
+                    }
+                }
+            }
+
+            .thumb-slide-item {
+                max-width: 103.6px;
+                height: 100px;
+
+                img,
+                video {
+                    width: 100%;
+                    border-radius: $border-radius;
+                    object-fit: cover;
+                }
+            }
+
+            .cars__book__button {
+                display: block;
+                width: 100%;
+                position: relative;
+                bottom: 0;
+            }
+
+            @media (max-width: 1000px) {
+                .cars__content-description {
+                    display: none;
+                }
+
+                .thumb-slide {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* Hide the default Swiper arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
+
+.swiper-button {
+    width: 40px;
+    height: 40px;
+    background-color: $button-color-light-main;
+    border-radius: $border-radius;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.swiper-button-prev {
+    background-image: url(../img/icons/prevDark.svg);
+}
+
+.swiper-button-next {
+    background-image: url(../img/icons/nextDark.svg);
+}
+
+.cars__navigation {
+    display: none !important;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    &-item {
+        background-color: $button-color-hover;
+        width: 40px;
+        height: 40px;
+        border-radius: $border-radius;
+        @include flexbox(row, center, nowrap);
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $button-color-main;
+        }
+    }
+}
+
+.swiper-button-disabled {
+    background-color: gray !important;
+}
+
+@media (max-width: 800px) {
+    .cars__container {
+        display: flex;
+        gap: 0;
+    }
+
+    .thumb-slide {
+        display: none;
+    }
+
+    .cars__item-1,
+    .cars__item-2,
+    .cars__item-3 {
+        flex-direction: column;
+
+        .cars__item-slider {
+            max-width: 100%;
+        }
+
+        .cars__item-swiper {
+            width: 100%;
+        }
+
+        .cars__content {
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .cars__content-description {
+            display: none;
+        }
+
+        .cars__content-info {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+            gap: 20px;
+        }
+
+        .cars__content-pricing {
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+
+    .cars__navigation {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}

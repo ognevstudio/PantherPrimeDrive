@@ -1,0 +1,253 @@
+/* Header design */
+.header {
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    background-color: $color-white;
+    z-index: 50;
+
+    &__row {
+        max-width: 1216px;
+        margin: 0 auto;
+        @include flexbox(row, space-between, nowrap);
+        align-items: center;
+        @include av('gap', 20, 10, $maxWC, $minWC);
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        a img:focus-visible {
+            outline: solid 1px $text-color-primary;
+        }
+    }
+
+    .logo-vector {
+        height: 40px;
+
+        @media (max-width: 480px) {
+            height: 50px;
+        }
+    }
+
+    .logo-text {
+        height: 30px;
+
+        @media (max-width: 480px) {
+            display: none;
+        }
+    }
+
+    a {
+        color: $text-color-primary;
+
+        &:hover {
+            color: lighten($color-black, 20%);
+        }
+    }
+}
+
+/* Desktop Menu Design */
+.header__nav {
+    flex: 1 1 auto;
+
+    &-list {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    &-item {
+        a:focus-visible {
+            outline: solid 1px $text-color-primary;
+        }
+    }
+
+
+}
+
+.header__contact {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__contact-link:focus-visible {
+    outline: solid 1px $text-color-primary;
+}
+
+.header__buttons {
+    @include flexbox(row, flex-start, nowrap);
+    @include av('gap', 20, 10, $maxWC, $minWC);
+}
+
+/* Book Button */
+.book__buttons {
+    @include flexbox(row, space-between, nowrap);
+
+    &:hover {
+
+        .book__button,
+        .book__button-arrow {
+            background-color: $button-color-hover;
+            color: $color-white;
+        }
+    }
+
+    .book__button {
+        @extend %button-style;
+
+        &-arrow {
+            width: 40px;
+            padding: 15px 15.5px;
+            @include flexbox(row, center, nowrap);
+            align-items: center;
+        }
+    }
+}
+
+.book__buttons:focus-visible {
+    outline: solid 1px $text-color-primary;
+}
+
+/* Mobile Burger Menu */
+.header__mobile-menu {
+    width: 40px;
+    position: relative;
+    display: none;
+}
+
+.header__burger {
+    transition: 0.2s;
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: $border-radius;
+    background-color: $color-primary;
+    background-image: url(../img/icons/burger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    @include flexbox(row, center, nowrap);
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+
+    &:hover {
+        background-color: $button-color-hover;
+    }
+
+    &:active {
+        background-color: $button-color-clicked;
+    }
+}
+
+.header__mobile-close {
+    background-color: $color-secondary;
+    background-image: url(../img/icons/closingBurger.svg);
+}
+
+.header__mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(108, 124, 98, 0.40) 0%, rgba(108, 124, 98, 0.40) 100%), #FFF;
+    display: none;
+    z-index: 1;
+}
+
+.header__mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 100%;
+    background-color: $color-white;
+    padding-top: 70px;
+    display: none;
+    z-index: 1;
+
+    &-list {
+        padding: 20px;
+    }
+
+    &-item {
+        padding: 10px 0;
+        text-align: end;
+    }
+}
+
+/* Mobile Call Button */
+.header__mobile-contact {
+    display: none;
+}
+
+.header__mobile-contact-link {
+    text-align: right;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.header__mobile-icon {
+    transition: 0.2s;
+    background-color: $button-color-main;
+    border-radius: $border-radius;
+    color: white;
+    align-content: center;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    white-space: nowrap;
+
+    @media (max-width: $mobile) {
+        padding: 0 24px;
+        width: 100%;
+    }
+
+    display: none;
+
+    &:hover {
+        background-color: $button-color-hover;
+    }
+
+    &:active {
+        background-color: $button-color-clicked;
+    }
+}
+
+.call__btn {
+    width: 110px;
+    @extend %button-style;
+    position: absolute;
+    right: 10px;
+    color: $color-white !important;
+
+    &:hover {
+        background-color: $button-color-hover;
+    }
+}
+
+.phone-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    text-align: end;
+
+    span {
+        opacity: 30%;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+
+}

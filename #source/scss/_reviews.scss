@@ -1,0 +1,227 @@
+// .reviews {
+//     .title {
+//         span {
+//             color: $color-primary;
+//         }
+//     }
+
+//     &__slider-container {
+//         max-width: 1216px;
+//         margin: 0 auto;
+//     }
+
+//     &__slider {
+//         display: flex;
+//         gap: 20px;
+//         transition: transform 0.5s ease-in-out;
+//     }
+
+//     &__item {
+//         position: relative;
+//         width: 100%;
+//         max-width: 300px;
+//         height: 520px;
+//         box-sizing: border-box;
+//         flex: 0 0 auto;
+//         @include flexbox(column, flex-start, nowrap);
+//         gap: 20px;
+
+//         &:nth-of-type(2n) {
+//             width: 289px;
+//             height: 520px;
+//             padding: 0;
+//         }
+
+//         video {
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             display: block;
+//             width: 100%;
+//             height: 100%;
+//             border-radius: $border-radius;
+//             object-fit: cover;
+//         }
+//     }
+
+//     &__leave-review {
+//         padding: 20px;
+//         color: $text-color-light;
+//         background-color: $color-black;
+//         border-radius: $border-radius;
+
+//         &-title {
+//             font-size: 20px;
+//         }
+//     }
+
+//     &__buttons {
+//         margin-top: 16px;
+//         @include flexbox(row, flex-start, nowrap);
+//         align-items: center;
+//         height: 41px;
+
+//         &:hover {
+//             .review__button {
+//                 background-color: $button-color-light-hover;
+//             }
+//         }
+//     }
+
+//     .review__button {
+//         width: 132px;
+//         height: 41px;
+//         background-color: $button-color-light-main;
+//         color: $text-color-primary;
+//         @extend %button-style;
+
+//         &-arrow {
+//             width: 40px;
+//             padding: 15px 15.5px;
+//             @include flexbox(row, center, nowrap);
+//             align-items: center;
+//         }
+//     }
+
+//     &__content {
+//         padding: 20px;
+//         border-radius: $border-radius;
+//         background-color: $color-beige;
+//         @include flexbox(column, flex-start, nowrap);
+//         gap: 10px;
+//     }
+
+//     &__text {
+//         font-size: 20px;
+//     }
+
+//     .play-button {
+//         position: absolute;
+//         top: 210px;
+//         width: 100px;
+//         height: 100px;
+//         margin-left: 100px;
+//         background-size: contain;
+//         cursor: pointer;
+//         z-index: 10;
+//         background: url('../img/icons/play.svg') no-repeat center center;
+//     }
+// }
+
+.reviews {
+    .title {
+        span {
+            color: $color-primary;
+        }
+    }
+
+    &__slider-container {
+        max-width: 1216px;
+        margin: 0 auto;
+    }
+
+    &__slider {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    &__item {
+        width: 100%;
+        max-width: 320px;
+        position: relative;
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        @include flexbox(column, flex-start, nowrap);
+        gap: 20px;
+
+        // Ensure consistent widths and gaps
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: $border-radius;
+            object-fit: cover;
+        }
+    }
+
+    &__leave-review {
+
+
+        padding: 20px;
+        color: $text-color-light;
+        background-color: $color-black;
+        border-radius: $border-radius;
+
+        &-title {
+            font-size: 20px;
+            padding-bottom: 6px;
+        }
+
+        span {
+            opacity: 60%;
+        }
+
+        @media (max-width: 600px) {
+            padding: 10px;
+        }
+    }
+
+    &__buttons {
+        margin-top: 16px;
+        @include flexbox(row, flex-start, nowrap);
+        align-items: center;
+        height: 41px;
+
+        &:hover {
+            .review__button {
+                background-color: $button-color-light-hover;
+            }
+        }
+    }
+
+    .review__button {
+        height: 41px;
+        background-color: $button-color-light-main;
+        color: $text-color-primary;
+        @extend %button-style;
+
+        &-arrow {
+            width: 40px;
+            padding: 15px 15.5px;
+            @include flexbox(row, center, nowrap);
+            align-items: center;
+        }
+    }
+
+    &__content {
+        padding: 20px;
+        border-radius: $border-radius;
+        background-color: $color-beige;
+        @include flexbox(column, flex-start, nowrap);
+        gap: 10px;
+
+        @media (max-width: 600px) {
+            padding: 10px;
+        }
+    }
+
+    &__name {
+        opacity: 40%;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 210px;
+        width: 100px;
+        height: 100px;
+        margin-left: 100px;
+        background-size: contain;
+        cursor: pointer;
+        z-index: 10;
+        background: url('../img/icons/play.svg') no-repeat center center;
+    }
+}

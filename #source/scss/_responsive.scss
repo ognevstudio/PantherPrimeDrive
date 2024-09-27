@@ -1,0 +1,288 @@
+// Media queries for responsive design
+
+@media (max-width:$desktop) {
+    [class*="-container"] {
+        width: 100%;
+    }
+
+    // Header Design
+    .header {
+        padding: 20px;
+    }
+
+    .header__row {
+        width: 100%;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__mobile-menu,
+    .header__burger {
+        display: block;
+    }
+
+    //Footer Design
+
+    .footer {
+        padding: 80px 20px;
+    }
+
+    .footer-item {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        flex: 2;
+    }
+
+    .footer__contact {
+        flex-direction: row;
+
+        br {
+            display: none;
+        }
+    }
+
+}
+
+@media (max-width:$laptop) {
+
+    //Header Design
+    .header__contact {
+        margin: 0;
+        flex: 1 1 auto;
+        justify-content: end;
+
+    }
+
+    .about-us__item-2 {
+        height: 280px;
+
+        .about-us__image {
+            width: 100%;
+            flex: 1;
+        }
+
+        .about-us__content {
+            width: 100%;
+            flex: 1;
+        }
+    }
+
+    //FAQ Design
+
+    .accordion-container {
+        flex-direction: column;
+    }
+
+    .accordion__button br {
+        display: none;
+    }
+
+    .book__main-block {
+        flex-direction: column;
+    }
+
+    .book__car-info {
+        flex-direction: row;
+    }
+
+    .book__date-time-info {
+        flex-direction: row;
+    }
+
+    .book-container:has(.book__info-container.visually-hidden) {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:$tablet) {
+
+    //Header Design
+    .header__mobile-icon {
+        display: block;
+    }
+
+    .header__button-arrow,
+    .header__contact-link {
+        display: none;
+    }
+
+    //Home Design
+    .home__content {
+        order: 4;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .home__title-text {
+        text-align: left;
+    }
+
+    .home__paragraph {
+        width: 100%;
+    }
+
+    .home__marquee {
+        margin: 20px 0;
+    }
+
+    //Service Design
+
+    .service__item {
+        flex-direction: column !important;
+    }
+
+    //Footer Design 
+
+    .footer-container {
+        gap: 30px;
+    }
+
+    .footer__inner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        position: relative;
+    }
+
+    .footer__contact {
+        order: 1;
+        flex-direction: column;
+    }
+
+    .footer__socials {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .footer-item {
+        width: 100%;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex: 2;
+    }
+
+    // booking page
+
+
+    .book__passengers-additional-services {
+        flex-direction: column;
+    }
+
+    .book-container {
+        grid-template-columns: 1fr;
+    }
+
+    .book__main-block {
+        flex-direction: row;
+    }
+
+    .book__car-info {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .title {
+        margin-bottom: 20px !important;
+    }
+
+    .header__mobile-contact {
+        display: block;
+    }
+
+    .header__button-arrow {
+        display: none !important;
+    }
+
+    //Service Design
+
+    .service__item-pricing {
+        font-size: 18px;
+    }
+
+    .service__item-images{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:repeat(2, 180px);
+
+        @media (max-width: $mobileL) {
+            grid-template-rows:repeat(2, 140px);
+        }
+    }
+
+
+    .service__item-images img:nth-of-type(3) {
+        grid-column: 1/-1;
+    }
+
+
+    .service__item-contact-btn {
+        align-self: flex-start;
+    }
+
+
+    //Footer Design
+
+    .footer {
+        padding: 50px 20px;
+    }
+
+    .footer__menu-item {
+        flex: 1 1 calc(33.33% - 10px);
+        /* 3 items per row, considering the gap */
+        text-align: center;
+    }
+}
+
+@media (max-width:$mobileL) {
+    //Header design
+    .header__mobile-icon {
+        display: none;
+    }
+    
+    // Home Design
+    .home__content {
+        @include flexbox(column, flex-start, nowrap);
+        gap: 10px;
+        align-items: start;
+    }
+
+    .home__buttons,
+    .home__button {
+        width: 100% !important;
+    }
+
+
+
+   
+    .form-user-info {
+        grid-template-columns: 1fr;
+    }
+
+    .service__item-contact-btn {
+        align-self: flex-start;
+    }
+
+    .book__main-block {
+        flex-direction: column;
+    }
+
+    .book__car-image {
+        width: 100%;
+    }
+
+    .custom-input {
+        flex-direction: column;
+    }
+}
+
