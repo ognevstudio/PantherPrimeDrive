@@ -110,6 +110,10 @@
         display: none;
     }
 
+    .phone-container {
+        display: none;
+    }
+
     //Home Design
     .home__content {
         order: 4;
@@ -179,7 +183,7 @@
     }
 
     .book-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
     }
 
     .book__main-block {
